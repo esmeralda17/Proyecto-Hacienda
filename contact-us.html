@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Contact Us</title>
+    <title>Contacto</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,13 +73,15 @@
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
+                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Inicio</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Quienes somos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Plusvalía</a>
                     </li>
-                    <li class="rd-nav-item active"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="ubication.html">Ubicación</a>
+                    </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contacto</a>
                     </li>
                   </ul>
                 </div>
@@ -135,50 +137,67 @@
         </div>
       </section>
 
-      <!-- Contact Form-->
-      <section class="section section-sm section-last bg-default text-left">
+
+
+      <section class="section section-sm bg-default" >
         <div class="container">
-          <article class="title-classic">
-            <div class="title-classic-title">
-              <h3>Get in touch</h3>
+          <div class="row row-sm row-40 row-md-50">
+            <div class="col-sm-6 col-md-12 wow fadeInRight">
+              <!-- Product Big-->
+              <article class="product-big">
+                <div class="unit flex-column flex-md-row align-items-md-stretch">
+                  <section class="section section-sm section-last bg-default text-left">
+                    <div class="container">
+                      <article class="title-classic">
+                        <div class="title-classic-title">
+                          <h3>Contáctanos</h3>
+                        </div>
+                      </article>
+                      <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                        <div class="row row-14 gutters-14">
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="@Required">
+                              <label class="form-label" for="contact-your-name-2">¿Cuál es su nombre?</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">
+                              <label class="form-label" for="contact-email-2">¿De dónde es usted?</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
+                              <label class="form-label" for="contact-phone-2">Escriba su correo electrónico</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-wrap">
+                              <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
+                              <label class="form-label" for="contact-phone-2">¿Cuál es su número teléfonico?</label>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-wrap">
+                              <label class="form-label" for="contact-message-2">Mensaje</label>
+                              <textarea class="form-input textarea-lg" id="contact-message-2" name="message" data-constraints="@Required"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="button button-primary button-pipaluk" type="submit">Enviar Registro</button>
+                      </form>
+                    </div>
+                  </section>
+                </div>
+              </article>
             </div>
-            <div class="title-classic-text">
-              <p>If you have any questions, just fill in the contact form, and we will answer you shortly.</p>
-            </div>
-          </article>
-          <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-            <div class="row row-14 gutters-14">
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="@Required">
-                  <label class="form-label" for="contact-your-name-2">Your Name</label>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="contact-email-2">E-mail</label>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-wrap">
-                  <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
-                  <label class="form-label" for="contact-phone-2">Phone</label>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-wrap">
-                  <label class="form-label" for="contact-message-2">Message</label>
-                  <textarea class="form-input textarea-lg" id="contact-message-2" name="message" data-constraints="@Required"></textarea>
-                </div>
-              </div>
-            </div>
-            <button class="button button-primary button-pipaluk" type="submit">Send Message</button>
-          </form>
+          </div>
         </div>
       </section>
 
-      <!-- Page Footer--><a class="banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank"><img src="images/intense_big_02.jpg" alt=""/></a>
+      <!-- Page Footer--><a class="banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank"></a>
       <footer class="section footer-corporate context-dark">
         <div class="footer-corporate-inset">
           <div class="container">
