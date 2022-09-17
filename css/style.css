@@ -3,6 +3,31 @@
 * Trunk version 2.0.0
 */
 /** @group Base */
+
+#columnas{
+	column-count:3;
+	column-gap:20px;
+	
+ }
+ #columnasPluzv{
+	column-count:3;
+	column-gap:20px;
+	
+ }
+ #columnasAbout{
+	column-count:2;
+	column-gap:20px;
+	
+ }
+ .CarruselAbout{
+	
+		border-color: gray;
+		border-width: 10px;
+		border-style: ridge;
+	  
+	
+ }
+
 a:focus,
 button:focus {
 	outline: none !important;
