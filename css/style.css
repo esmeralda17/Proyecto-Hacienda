@@ -3,6 +3,18 @@
 * Trunk version 2.0.0
 */
 /** @group Base */
+
+#columnas{
+	column-count:3;
+	column-gap:20px;
+	
+ }
+ #columnasPluzv{
+	column-count:3;
+	column-gap:20px;
+	
+ }
+
 a:focus,
 button:focus {
 	outline: none !important;
