@@ -39,8 +39,8 @@ document.write(`
               <div class="rd-navbar-main">
                 <div class="rd-navbar-nav-wrap">
                   <ul class="list-inline list-inline-md rd-navbar-corporate-list-social">
-                    <li><a class="icon fa fa-facebook" href="https://www.facebook.com/haciendamayacancun"></a></li>
-                    <li><a class="icon fa fa-instagram" href="https://www.instagram.com/haciendamayacun/"></a></li>
+                    <li><a class="icon fa fa-facebook" href="https://www.facebook.com/haciendamayacancun" target="_blank"></a></li>
+                    <li><a class="icon fa fa-instagram" href="https://www.instagram.com/haciendamayacun/" target="_blank"></a></li>
                   </ul>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
