@@ -52,6 +52,8 @@ document.write(`
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="ubication.html">Ubicación</a>
                     </li>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="masterPlan.html">Master Plan</a>
+                    </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contacto</a>
                     </li>
                   </ul>
