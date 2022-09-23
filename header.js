@@ -46,7 +46,7 @@ document.write(`
                   <ul class="rd-navbar-nav">
                     <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Inicio</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Quienes somos</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Quiénes somos</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Plusvalía</a>
                     </li>
