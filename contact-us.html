@@ -40,41 +40,55 @@
                           <h3>Contáctanos</h3>
                         </div>
                       </article>
-                      <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                      <!-- <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                         <div class="row row-14 gutters-14">
                           <div class="col-md-6">
                             <div class="form-wrap">
-                              <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="@Required">
-                              <label class="form-label" for="contact-your-name-2">¿Cuál es su nombre?</label>
+                              <input class="form-input" id="name" type="text" name="name" >
+                              <label class="form-label" for="name">¿Cuál es su nombre?</label>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-wrap">
-                              <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">
-                              <label class="form-label" for="contact-email-2">¿De dónde es usted?</label>
+                              <input class="form-input" id="city" type="text" name="city" >
+                              <label class="form-label" for="city">¿De dónde es usted?</label>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-wrap">
-                              <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
-                              <label class="form-label" for="contact-phone-2">Escriba su correo electrónico</label>
+                              <input class="form-input" id="email" type="email" name="email" >
+                              <label class="form-label" for="email">Escriba su correo electrónico</label>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-wrap">
-                              <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
-                              <label class="form-label" for="contact-phone-2">¿Cuál es su número teléfonico?</label>
+                              <input class="form-input" id="phone" type="cel" name="phone" >
+                              <label class="form-label" for="phone">¿Cuál es su número teléfonico?</label>
                             </div>
                           </div>
                           <div class="col-12">
                             <div class="form-wrap">
-                              <label class="form-label" for="contact-message-2">Mensaje</label>
-                              <textarea class="form-input textarea-lg" id="contact-message-2" name="message" data-constraints="@Required"></textarea>
+                              <textarea class="form-input textarea-lg" type="text" id="message" name="message"></textarea>
+                              <label class="form-label" for="message">Mensaje</label>
                             </div>
                           </div>
                         </div>
-                        <button class="button button-primary button-pipaluk" type="submit">Enviar Registro</button>
-                      </form>
+                        <button id="firstSubmit" class="default-btn button button-primary button-pipaluk" type="submit">Enviar Registro</button>
+                      </form> -->
+                      <form class="row mn-form wow fadeInUp animated animated" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="col-md-12 mn-form-bottom form-group">
+                            <input type="text" id="name" class="form-control" placeholder="¿Cuál es su nombre?" required=""> </div>
+                            <div class="col-md-12 mn-form-bottom form-group">
+                                <input  id="city" type="text" class="form-control" placeholder="¿De dónde es usted?" required=""> </div>
+                        <div class="col-md-12 mn-form-bottom form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Escriba su correo electrónico" required=""> </div>
+                        <div class="col-md-12 mn-form-bottom form-group">
+                            <input id="phone" type="tel" class="form-control" placeholder="¿Cuál es su número de teléfono?" required=""> </div>
+                            <div class="col-md-12 mn-form-bottom form-group">
+                                <input type="text" class="form-control" placeholder="Mensaje" required="" id="message"> </div>
+                        <div class="col-md-12 mt-3 form-group mn-form-group">
+                            <button type="button" id="firstSubmit" class="col-md-12 btn btn-customs mn-font default-btn">Enviar registro <i class="flaticon-right"></i></button>
+                        </div>
                     </div>
                   </section>
                 </div>
@@ -126,5 +140,83 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function () {
+
+          $("#firstSubmit").click(function () {
+              validateFirstContact();
+          });
+
+      });
+
+
+
+      function validateFirstContact() {
+          var name = $("#name").val();
+          var email = $("#email").val();
+          var city = $("#city").val();
+          var phone = $("#phone").val();
+          var notes = $("#message").val();
+
+          var leadRequest = { name: name, email: email, city: city, phone: phone, clientNotes: notes, productName: 'Web Hacienda Maya' };
+
+          validateForm(name, city, phone, email, leadRequest);
+
+      }
+
+      function submitToAPI(leadRequest) {
+          //$("#firstSubmit").prop("disabled", true);
+
+          //alert(JSON.stringify(leadRequest));
+
+          $.ajax({
+              type: "POST",
+              data: JSON.stringify(leadRequest),
+              url: "http://haciendamaya.inmox.mx/api/leadapi",
+              contentType: "application/json",
+              success: function (result) {
+                  //SendLeadToGA();
+                  //goog_report_conversion();
+                  //window.location.replace("http://www.haciendamaya.mx/gracias.html");
+                  alert("Gracias por contactarnos")
+                  //$("#firstSubmit").prop("disabled", false);
+
+              }
+          });
+
+
+      }
+
+
+      function validateForm(name, city, phone, email, leadRequest) {
+          if (name.length > 0) {
+              if (city.length > 0) {
+                  if (phone.length > 0) {
+                      if (email.length > 0 && isValidEmailAddress(email)) {
+                          submitToAPI(leadRequest);
+                      }
+                      else {
+                          alert("Escribe tu email");
+                      }
+                  }
+                  else {
+                      alert("Escribe tu telÃ©fono");
+                  }
+              }
+              else {
+                  alert("Escribe tu ciudad");
+              }
+          }
+          else {
+              alert("Escribe tu nombre");
+          }
+      }
+
+      function isValidEmailAddress(emailAddress) {
+          var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+          return pattern.test(emailAddress);
+      }
+    </script>
   </body>
 </html>
