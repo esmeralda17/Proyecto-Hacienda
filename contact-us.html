@@ -81,7 +81,7 @@
                             <div class="col-md-12 mn-form-bottom form-group">
                                 <input  id="city" type="text" class="form-control" placeholder="¿De dónde es usted?" required=""> </div>
                         <div class="col-md-12 mn-form-bottom form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Escriba su correo electrónico" required=""> </div>
+                            <input type="email" class="form-control" id="emailx" placeholder="Escriba su correo electrónico" required=""> </div>
                         <div class="col-md-12 mn-form-bottom form-group">
                             <input id="phone" type="tel" class="form-control" placeholder="¿Cuál es su número de teléfono?" required=""> </div>
                             <div class="col-md-12 mn-form-bottom form-group">
@@ -140,83 +140,83 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-    <script type="text/javascript">
-
-      $(document).ready(function () {
-
-          $("#firstSubmit").click(function () {
-              validateFirstContact();
-          });
-
-      });
-
-
-
-      function validateFirstContact() {
-          var name = $("#name").val();
-          var email = $("#email").val();
-          var city = $("#city").val();
-          var phone = $("#phone").val();
-          var notes = $("#message").val();
-
-          var leadRequest = { name: name, email: email, city: city, phone: phone, clientNotes: notes, productName: 'Web Hacienda Maya' };
-
-          validateForm(name, city, phone, email, leadRequest);
-
-      }
-
-      function submitToAPI(leadRequest) {
-          //$("#firstSubmit").prop("disabled", true);
-
-          //alert(JSON.stringify(leadRequest));
-
-          $.ajax({
-              type: "POST",
-              data: JSON.stringify(leadRequest),
-              url: "http://haciendamaya.inmox.mx/api/leadapi",
-              contentType: "application/json",
-              success: function (result) {
-                  //SendLeadToGA();
-                  //goog_report_conversion();
-                  //window.location.replace("http://www.haciendamaya.mx/gracias.html");
-                  alert("Gracias por contactarnos")
-                  //$("#firstSubmit").prop("disabled", false);
-
-              }
-          });
-
-
-      }
-
-
-      function validateForm(name, city, phone, email, leadRequest) {
-          if (name.length > 0) {
-              if (city.length > 0) {
-                  if (phone.length > 0) {
-                      if (email.length > 0 && isValidEmailAddress(email)) {
-                          submitToAPI(leadRequest);
-                      }
-                      else {
-                          alert("Escribe tu email");
-                      }
-                  }
-                  else {
-                      alert("Escribe tu telÃ©fono");
-                  }
-              }
-              else {
-                  alert("Escribe tu ciudad");
-              }
-          }
-          else {
-              alert("Escribe tu nombre");
-          }
-      }
-
-      function isValidEmailAddress(emailAddress) {
-          var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-          return pattern.test(emailAddress);
-      }
-    </script>
+    <script> 
+      jQuery(document).ready(function ($) {
+      
+      
+                    $("#firstSubmit").click(function () {
+                        validateFirstContact();
+                    });
+      
+      
+      
+      
+      
+                function validateFirstContact() {
+                    var name = $("#name").val();
+                    var email = $("#emailx").val();
+                    var city = $("#city").val();
+                    var phone = $("#phone").val();
+                    var notes = $("#message").val();
+      
+                    var leadRequest = { name: name, email: email, city: city, phone: phone, clientNotes: notes, productName: 'HM Web' };
+      
+                    validateForm(name, city, phone, email, leadRequest);
+      
+                }
+      
+                function submitToAPI(leadRequest) {
+                    //$("#firstSubmit").prop("disabled", true);
+      
+                    //alert(JSON.stringify(leadRequest));
+      
+                    $.ajax({
+                        type: "POST",
+                        data: JSON.stringify(leadRequest),
+                        url: "http://hm.realtyadmin.mx/api/leadapi",
+                        contentType: "application/json",
+                        success: function (result) {
+                           
+                            window.location.replace("https://haciendamaya.mx/gracias.html");
+                            
+      
+                        }
+                    });
+      
+      
+                }
+      
+      
+                function validateForm(name, city, phone, email, leadRequest) {
+                    if (name.length > 0) {
+                        if (city.length > 0) {
+                            if (phone.length > 0) {
+                                if (email.length > 0 && isValidEmailAddress(email)) {
+                                    submitToAPI(leadRequest);
+                                }
+                                else {
+                                    alert("Escribe tu email");
+                                }
+                            }
+                            else {
+                                alert("Escribe tu teléfono");
+                            }
+                        }
+                        else {
+                            alert("Escribe tu ciudad");
+                        }
+                    }
+                    else {
+                        alert("Escribe tu nombre");
+                    }
+                }
+      
+                function isValidEmailAddress(emailAddress) {
+                    var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+                    return pattern.test(emailAddress);
+                }
+      
+                  });</script>
+      
   </body>
 </html>
