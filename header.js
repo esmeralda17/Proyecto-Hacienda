@@ -48,7 +48,7 @@ document.write(`
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Quiénes somos</a>
                     </li>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Plusvalía</a>
+                    <li class="rd-nav-item"><a class="rd-nav-link" href="plusvalia.html">Plusvalía</a>
                     </li>
                     <li class="rd-nav-item"><a class="rd-nav-link" href="masterPlan.html">Master Plan</a>
                     </li>
